@@ -1,0 +1,123 @@
+@font-face {
+  src: url(Continua-Regular.woff);
+  font-family: 'Continua';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, p {
+  margin: 0;
+}
+
+body {
+  font-family: 'helvetica', sans-serif;
+}
+
+.background {
+  padding-top: 25px;
+  /* position: fixed; */
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  position: fixed;
+  top: 25px;
+  left: 0;
+  z-index: 2;
+}
+
+.caption__amigo {
+  position: fixed;
+  z-index: 2;
+
+  font-family: 'Continua', sans-serif;
+  font-size: 14vw;
+  line-height: 1;
+  padding: 0 100px;
+  margin-top: -40px;
+}
+.logo {
+  width: 330px;
+  vertical-align: middle;
+}
+
+.text {
+
+  padding: 0 100px;
+  padding-top: 268px;
+  font-family: 'Continua', sans-serif;
+  font-size: 14vw;
+  line-height: 1;
+  margin-top: -40px;
+  text-align: center;
+  position: fixed;
+}
+
+.footer {
+  position: fixed;
+  bottom: 50px;
+  padding: 0 100px;
+}
+
+.footer p {
+  color: #fa7574;
+  margin-right: 50px;
+  display: inline-block;
+  line-height: 1.4
+}
+
+.highlight {
+  color: #fa7574;
+  margin: 0 10px;
+}
+
+
+.scroll {
+  height: 2500px;
+  position: relative;
+}
+
+.scroll img {
+  width: 300px;
+  position: absolute;
+}
+
+.scroll img:nth-child(4), .scroll img:nth-child(5), .scroll img:nth-child(6) {
+  width: 600px;
+}
+
+.scroll img:nth-child(1) {
+  top: 100px;
+  left: 400px;
+}
+
+.scroll img:nth-child(2) {
+  top: 850px;
+  right: 450px;
+}
+
+.scroll img:nth-child(3) {
+  top: 850px;
+  right: 450px;
+}
+
+.scroll img:nth-child(4) {
+  top: 1200px;
+  left: 100px;
+}
+.scroll img:nth-child(5) {
+  top: 1550px;
+  right: 500px;
+}
+.scroll img:nth-child(6) {
+  top: 1950px;
+  left: 350px;
+}
+
+.z_index_top {
+  z-index: 100;
+  position: relative;
+}

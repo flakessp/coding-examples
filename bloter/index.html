@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="bloter.min.js"></script>
+  <script src="blotter.liquidMaterial.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: black;
+    }
+    .table {
+      height: 600px;
+      width: 900px;
+      display: flex;
+      position: absolute;
+      background: red;
+      box-shadow: 20px 20px 0px 0px red;
+    }
+    .row {
+      /* width: 33%; */
+      border-right: 10px solid black;
+      border-bottom: 10px solid black;
+      flex: 1;
+    }
+    /* .row:last-of-type {
+      border-right: none;
+    } */
+    .circle {
+      background: white;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      margin-left: -40px;
+      margin-top: 40px;
+      /* animation: color 10s infinite; */
+    }
+
+    canvas {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes color {
+      0% {
+        background: white;
+      } 
+      50% {
+        background: black;
+      }
+      100% {
+        background: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="table">
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

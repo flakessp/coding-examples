@@ -7,17 +7,20 @@
   <title>Document</title>
   <script src="bloter.min.js"></script>
   <script src="blotter.liquidMaterial.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
   <style>
     * {
       box-sizing: border-box;
     }
     body {
       margin: 0;
+      font: 20px 'PT Mono', sans-serif;
     }
     :root {
       --main-color: #b9b9b9;
       --border-width: 3px;
     }
+
     .container {
       width: 100vw;
       height: 100vh;
@@ -41,6 +44,21 @@
       border-right: var(--border-width) solid black;
       border-bottom: var(--border-width) solid black;
       flex: 1;
+      color: white;
+      position: relative;
+      overflow: auto;
+    }
+    p {
+      position: absolute;
+      padding: 35px;
+      margin: 0;
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: 0px;
+    }
+    *::selection {
+      background: white;
+      color: black;
     }
     /* .row:last-of-type {
       border-right: none;
@@ -52,7 +70,10 @@
       border-radius: 50%;
       margin-left: -40px;
       margin-top: 40px;
-      /* animation: color 10s infinite; */
+      /* transition: transform 1s; */
+      will-change: transform;
+    box-shadow: 5px 6px 7px 0px #0000001a;
+      animation: color 10s infinite;
     }
     .row {
       width: 100%;
@@ -74,10 +95,40 @@
       position: absolute;
       width: 200px;
       height: 200px;
-      background: black;
+      background: darksalmon;
       right: 180px;
       top: 200px;
-      mix-blend-mode: overlay;
+      /* mix-blend-mode: overlay; */
+      /* transition: transform 1s; */
+      will-change: transform;
+      /* animation: 5s toCircle infinite ease-in-out;  */
+    }
+
+    .qa {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .qa span {
+      font-size: 30px;
+      line-height: 1;
+      /* line-height: 2; */
+    }
+
+
+    .intro span {
+      color: black;
+    }
+
+    @keyframes toCircle {
+      0% {
+        border-radius: 0;
+      }
+      50% {
+        border-radius: 50%;
+      }
+      100% {
+        border-radius: 0;
+      }
     }
 
 
@@ -98,14 +149,28 @@
   <div class="container">
     <div class="table">
       <div class="box"></div>
-      <div class="column"></div>
-      <div class="column"></div>
+      <div class="column intro">
+        <p>Генеративный Арт <span>#/</span> Javascript <span>#/</span> Canvas <span>#/</span> 17 марта <span>#/</span> 5 часов <span>#/</span> 13:00 <span>#/</span> 5000 </p>
+      </div>
+      <div class="column">
+        <p class="qa"> <span>-Q--A</span><br><br>
+          - Какой нужен опыт?<br>
+          -- Никакого, воркшоп про инструмент, а не про Javascript.<br><br>
+          - Что нужно?<br>
+          -- Ноутбук(PC/MAC), зарядку, желание и настроение эксперементировать<br><br>
+          - Где будет проходить? <br>
+          -- В зависимости от количества желающих будет выбрана площадка. Точно центр.<br>
+        </p>
+      </div>
       <div class="column">
         <div class="circle"></div>
       </div>
       <div class="row">
         <div class="canvas-container"></div>
       </div>
+    </div>
+    <div class="canvas-test">
+      <canvas></canvas>
     </div>
   </div>
   <script src="app.js"></script>

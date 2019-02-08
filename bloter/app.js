@@ -1,5 +1,7 @@
+(function(){
+
 // BLOTTER - Example 2
-var text = new Blotter.Text("Криэйтив 🥚", {
+var text = new Blotter.Text("Криэйтив", {
   family : "'PT Mono', serif",
   size : 80,
   fill : "#171717",
@@ -18,17 +20,8 @@ var text2 = new Blotter.Text("кодинг", {
 
 var material = new Blotter.LiquidDistortMaterial();
 
-// Play with the value for uSpeed. Lower values slow
-// down animation, while higher values speed it up. At
-// a speed of 0.0, animation is stopped entirely.
 material.uniforms.uSpeed.value = 0.1;
 
-// Try uncommenting the following line to play with
-// the "volatility" of the effect. Higher values here will
-// produce more dramatic changes in the appearance of your
-// text as it animates, but you will likely want to keep
-// the value below 1.0.
-//material.uniforms.uVolatility.value = 0.30;
 
 var blotter = new Blotter(material, {
   texts : [text,text2]
@@ -61,7 +54,10 @@ let winsize;
         return {x: posx, y: posy};
     }
 
+    let circle = document.querySelector('.circle');
+    let box = document.querySelector('.box');
     let mousePos = {x: winsize.width/2, y: winsize.height/2};
     window.addEventListener('mousemove', ev => {
-      mousePos = getMousePos(ev);
+      mousePos = getMousePos(ev);circle.setAttribute('style', `transform: translate(${mousePos.x/100}%, ${mousePos.y/100}%)`);
     });
+}())

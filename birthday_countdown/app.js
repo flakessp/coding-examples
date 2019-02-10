@@ -44,7 +44,12 @@ calculateDecimalDifference = () => {
 
 const OUTPUT = document.getElementById('output');
 
-setInterval(function(){
-  OUTPUT.innerText = calculateDecimalDifference();
-}, 100);
+// setInterval(function(){
+//   const diff = calculateDecimalDifference();
+//   let html = '';
+//   for (let i = 0; i < 18; i++) {
+//     html +=`<p>${diff.toString().split('').slice(0,i+1).join('')}</p>`;
+//   }
+//   OUTPUT.innerHTML = html;
+// }, 150);
 

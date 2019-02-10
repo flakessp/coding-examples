@@ -44,12 +44,42 @@ calculateDecimalDifference = () => {
 
 const OUTPUT = document.getElementById('output');
 
-// setInterval(function(){
-//   const diff = calculateDecimalDifference();
-//   let html = '';
-//   for (let i = 0; i < 18; i++) {
-//     html +=`<p>${diff.toString().split('').slice(0,i+1).join('')}</p>`;
-//   }
-//   OUTPUT.innerHTML = html;
-// }, 150);
+setInterval(function(){
+  const diff = calculateDecimalDifference();
+  let html = '';
+  for (let i = 0; i < 18; i++) {
+    html +=`<p>${diff.toString().split('').slice(0,i+1).join('')}</p>`;
+  }
+  OUTPUT.innerHTML = html;
+}, 150);
 
+
+
+
+function getMouseCoords(e) {
+  var e = e || window.event;
+}
+
+
+var followCursor = (function() {
+  var s = document.querySelector('.waffle-container');
+  s.style.position = 'absolute';
+
+  return {
+    init: function() {
+      document.body.appendChild(s);
+    },
+
+    run: function(e) {
+      var e = e || window.event;
+      s.style.left  = (e.clientX - 5) + 'px';
+      s.style.top = (e.clientY - 5) + 'px';
+      getMouseCoords(e);
+    }
+  };
+}());
+
+window.onload = function() {
+  followCursor.init();
+  document.body.onmousemove = followCursor.run;
+}
